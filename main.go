@@ -12,11 +12,8 @@ type Node struct {
 func printLinkedList(head *Node){
 	var temp *Node = head;
 	var count uint = 0;
-	for {
+	for  (temp.next != nil) {
 		fmt.Printf("Node %v: %v\n", count, temp.value);
-		if temp.next == nil{
-			break
-		}
 		temp = temp.next;
 		count ++;
 	}
