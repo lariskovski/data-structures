@@ -22,20 +22,20 @@ func main(){
 	// =====================
 	// Linked List Example
 	// =====================
-	var head *linked.Node;
-	// fmt.Printf("head address: %v\n", &head);
 	
-	linked.InsertNodeAtHead(linked.CreateNode(3), &head);
-	linked.InsertNodeAtHead(linked.CreateNode(6), &head);
-	linked.InsertNodeAtHead(linked.CreateNode(9), &head);
+	// fmt.Printf("head address: %v\n");
 	
-	linked.InsertAtPosition(linked.CreateNode(10), 1, head);
-	linked.PrintLinkedList(head);
+	linked.InsertNodeAtHead(linked.CreateNode(3));
+	linked.InsertNodeAtHead(linked.CreateNode(6));
+	linked.InsertNodeAtHead(linked.CreateNode(9));
+	
+	linked.InsertAtPosition(linked.CreateNode(10), 1);
+	linked.PrintLinkedList();
 
-	linked.FindNode(4, head);
+	linked.FindNode(4);
 
-	linked.RemoveNodeAtHead(&head);
-	linked.PrintLinkedList(head);
+	linked.RemoveNodeAtHead();
+	linked.PrintLinkedList();
 
 
 }

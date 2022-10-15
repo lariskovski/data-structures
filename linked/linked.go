@@ -9,7 +9,9 @@ type Node struct {
 	next *Node;
 }
 
-func PrintLinkedList(head *Node){
+var head *Node;
+
+func PrintLinkedList(){
 	var temp *Node = head;
 	var count uint = 0;
 	for  {
@@ -29,19 +31,21 @@ func CreateNode(value int) *Node{
 	return node;
 }
 
-func InsertNodeAtHead(node *Node, head **Node){
+func InsertNodeAtHead(node *Node){
 	// fmt.Printf("insert %v at head (currently %v)\n", node.value, (*head).value);
 	// fmt.Printf("head address: %v\n", head);
-	node.next = *head;
-	*head = node;
+	var temp_head **Node = &head;
+	node.next = *temp_head;
+	*temp_head = node;
 }
 
-func RemoveNodeAtHead(head **Node){
-	*head = (*head).next;
+func RemoveNodeAtHead(){
+	var temp_head **Node = &head;
+	*temp_head = (*temp_head).next;
 }
 
 
-func FindNode(value int, head *Node){
+func FindNode(value int){
 	var temp *Node = head;
 	var count uint = 0;
 	for (temp.next != nil) {
@@ -56,7 +60,7 @@ func FindNode(value int, head *Node){
 	fmt.Printf("Int %v not found on linked list.\n", value);
 }
 
-func InsertAtPosition(node *Node, position uint,head *Node){
+func InsertAtPosition(node *Node, position uint){
 	var temp *Node = head;
 	var count uint = 0;
 	for (temp.next != nil) {
