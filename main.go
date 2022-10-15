@@ -1,13 +1,26 @@
 package main
 
 import (
+	"fmt"
 	"data-structures/linked"
+	"data-structures/stack"
 )
 
 func main(){
 
 	// =====================
-	// Linked List Examples
+	// Stack Example
+	// =====================
+	stack.Push(5);
+	stack.Push(3);
+	stack.Push(1);
+
+	fmt.Printf("%v\n", stack.Pop())
+	fmt.Printf("%v\n", stack.Pop())
+	fmt.Printf("%v\n", stack.Pop())
+
+	// =====================
+	// Linked List Example
 	// =====================
 	var head *linked.Node;
 	// fmt.Printf("head address: %v\n", &head);
