@@ -77,20 +77,13 @@ func main(){
 
 	var head *Node;
 	// fmt.Printf("head address: %v\n", &head);
-	var n1 *Node = createNode(24);
-	var n2 *Node = createNode(93209);
-	var n3 *Node = createNode(9);
-	var n4 *Node = createNode(3);
 	
-	var n10 *Node = createNode(10);
-	
-	
-	insertNodeAtHead(n1, &head);
-	insertNodeAtHead(n2, &head);
-	insertNodeAtHead(n3, &head);
-	insertNodeAtHead(n4, &head);
+	insertNodeAtHead(createNode(24), &head);
+	insertNodeAtHead(createNode(99), &head);
+	insertNodeAtHead(createNode(9), &head);
+	insertNodeAtHead(createNode(3), &head);
 
-	insertAtPosition(n10, 1, head);
+	insertAtPosition(createNode(10), 1, head);
 
 	printLinkedList(head);
 
