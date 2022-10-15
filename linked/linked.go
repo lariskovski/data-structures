@@ -24,14 +24,14 @@ func PrintLinkedList(){
 	}
 }
 
-func CreateNode(value int) *Node{
+func createNode(value int) *Node{
 	var node *Node = new(Node);
 	node.value = value;
 	node.next = nil;
 	return node;
 }
 
-func InsertNodeAtHead(node *Node){
+func insertNodeAtHead(node *Node){
 	// fmt.Printf("insert %v at head (currently %v)\n", node.value, (*head).value);
 	// fmt.Printf("head address: %v\n", head);
 	var temp_head **Node = &head;
@@ -60,7 +60,7 @@ func FindNode(value int){
 	fmt.Printf("Int %v not found on linked list.\n", value);
 }
 
-func InsertAtPosition(node *Node, position uint){
+func insertAtPosition(node *Node, position uint){
 	var temp *Node = head;
 	var count uint = 0;
 	for (temp.next != nil) {
@@ -74,4 +74,13 @@ func InsertAtPosition(node *Node, position uint){
 		}
 	}
 	fmt.Printf("Position %v out of range. Linked List size is %v", position, count);
+}
+
+func Insert(value int, position ...uint) {
+	// Implement error throw if position > 1
+	if (position == nil) {
+		insertNodeAtHead(createNode(value))
+	} else {
+		insertAtPosition(createNode(value), position[0]);
+	}
 }
